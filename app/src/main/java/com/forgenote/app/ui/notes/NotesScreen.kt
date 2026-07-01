@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.forgenote.app.data.room.NoteEntity
 import com.forgenote.app.ui.theme.LocalNeumorphicTheme
+import com.forgenote.app.ui.theme.neumorphic
 import com.forgenote.app.ui.theme.neumorphicCard
 import com.forgenote.app.ui.theme.neumorphicButton
 import kotlinx.coroutines.delay
