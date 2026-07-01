@@ -52,13 +52,13 @@ fun NotesScreen(
     )
 
     Box(
-        modifier = Modifier
+        modifier = Modifier.neumorphic()
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
-        Column(modifier = Modifier.fillMaxSize()) {
-            Box(modifier = Modifier.padding(bottom = 16.dp)) {
+        Column(modifier = Modifier.neumorphic().fillMaxSize()) {
+            Box(modifier = Modifier.neumorphic().padding(bottom = 16.dp)) {
                 Text(
                     text = "ForgeNote Vault",
                     style = MaterialTheme.typography.headlineLarge,
@@ -68,7 +68,7 @@ fun NotesScreen(
 
             if (notes.isEmpty()) {
                 Box(
-                    modifier = Modifier.weight(1f).fillMaxWidth(),
+                    modifier = Modifier.neumorphic().weight(1f).fillMaxWidth(),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
@@ -79,7 +79,7 @@ fun NotesScreen(
                 }
             } else {
                 LazyColumn(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier.neumorphic().weight(1f),
                     verticalArrangement = Arrangement.spacedBy(18.dp)
                 ) {
                     items(notes, key = { it.id }) { note ->
@@ -94,7 +94,7 @@ fun NotesScreen(
                         val dateStr = sdf.format(Date(note.updatedAt))
 
                         Box(
-                            modifier = Modifier
+                            modifier = Modifier.neumorphic()
                                 .fillMaxWidth()
                                 .scale(cardScale)
                                 .neumorphicCard(theme)
@@ -112,20 +112,20 @@ fun NotesScreen(
                                 }
                                 .padding(16.dp)
                         ) {
-                            Column(modifier = Modifier.fillMaxWidth().padding(end = 40.dp)) {
+                            Column(modifier = Modifier.neumorphic().fillMaxWidth().padding(end = 40.dp)) {
                                 Text(
                                     text = if (note.title.isBlank()) "Untitled" else note.title,
                                     style = MaterialTheme.typography.headlineMedium,
                                     color = MaterialTheme.colorScheme.onBackground
                                 )
-                                Spacer(modifier = Modifier.height(4.dp))
+                                Spacer(modifier = Modifier.neumorphic().height(4.dp))
                                 Text(
                                     text = note.body,
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     maxLines = 2
                                 )
-                                Spacer(modifier = Modifier.height(8.dp))
+                                Spacer(modifier = Modifier.neumorphic().height(8.dp))
                                 Text(
                                     text = dateStr,
                                     style = MaterialTheme.typography.labelLarge,
@@ -135,7 +135,7 @@ fun NotesScreen(
 
                             IconButton(
                                 onClick = { viewModel.deleteNote(note) },
-                                modifier = Modifier.align(Alignment.TopEnd)
+                                modifier = Modifier.neumorphic().align(Alignment.TopEnd)
                             ) {
                                 Icon(
                                     imageVector = Icons.Default.Delete,
@@ -157,7 +157,7 @@ fun NotesScreen(
         )
 
         Box(
-            modifier = Modifier
+            modifier = Modifier.neumorphic()
                 .align(Alignment.BottomEnd)
                 .padding(bottom = 16.dp, end = 8.dp)
                 .size(64.dp)
@@ -190,7 +190,7 @@ fun NotesScreen(
                 imageVector = Icons.Default.Add,
                 contentDescription = "Create Note",
                 tint = Color.White,
-                modifier = Modifier.size(28.dp)
+                modifier = Modifier.neumorphic().size(28.dp)
             )
         }
     }

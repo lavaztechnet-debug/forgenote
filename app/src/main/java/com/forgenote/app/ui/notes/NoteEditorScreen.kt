@@ -57,13 +57,13 @@ fun NoteEditorScreen(
     }
 
     Column(
-        modifier = Modifier
+        modifier = Modifier.neumorphic()
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
         Row(
-            modifier = Modifier
+            modifier = Modifier.neumorphic()
                 .fillMaxWidth()
                 .padding(bottom = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -72,7 +72,7 @@ fun NoteEditorScreen(
             var backPressed by remember { mutableStateOf(false) }
             val backScale by animateFloatAsState(if (backPressed) 0.94f else 1.0f, label = "back")
             Box(
-                modifier = Modifier
+                modifier = Modifier.neumorphic()
                     .size(48.dp)
                     .scale(backScale)
                     .neumorphicButton(theme, isPressed = backPressed)
@@ -96,7 +96,7 @@ fun NoteEditorScreen(
                 var htmlPressed by remember { mutableStateOf(false) }
                 val htmlScale by animateFloatAsState(if (htmlPressed) 0.94f else 1.0f, label = "html")
                 Box(
-                    modifier = Modifier
+                    modifier = Modifier.neumorphic()
                         .height(44.dp)
                         .scale(htmlScale)
                         .neumorphicButton(theme, isPressed = htmlPressed)
@@ -120,7 +120,7 @@ fun NoteEditorScreen(
                 var mdPressed by remember { mutableStateOf(false) }
                 val mdScale by animateFloatAsState(if (mdPressed) 0.94f else 1.0f, label = "md")
                 Box(
-                    modifier = Modifier
+                    modifier = Modifier.neumorphic()
                         .height(44.dp)
                         .scale(mdScale)
                         .neumorphicButton(theme, isPressed = mdPressed)
@@ -144,7 +144,7 @@ fun NoteEditorScreen(
                 var savePressed by remember { mutableStateOf(false) }
                 val saveScale by animateFloatAsState(if (savePressed) 0.94f else 1.0f, label = "save")
                 Box(
-                    modifier = Modifier
+                    modifier = Modifier.neumorphic()
                         .size(44.dp)
                         .scale(saveScale)
                         .neumorphicButton(theme, isPressed = savePressed)
@@ -169,7 +169,7 @@ fun NoteEditorScreen(
         }
 
         Box(
-            modifier = Modifier
+            modifier = Modifier.neumorphic()
                 .fillMaxWidth()
                 .height(56.dp)
                 .neumorphicSurface(theme, isPressed = true)
@@ -184,14 +184,14 @@ fun NoteEditorScreen(
                 onValueChange = { title = it },
                 textStyle = MaterialTheme.typography.titleLarge.copy(color = MaterialTheme.colorScheme.onBackground),
                 cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.neumorphic().fillMaxWidth()
             )
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.neumorphic().height(20.dp))
 
         Box(
-            modifier = Modifier
+            modifier = Modifier.neumorphic()
                 .fillMaxWidth()
                 .weight(1f)
                 .neumorphicSurface(theme, isPressed = true)
@@ -217,7 +217,7 @@ fun NoteEditorScreen(
                     text = "Begin writing your raw thoughts...",
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 4.dp)
+                    modifier = Modifier.neumorphic().padding(top = 4.dp)
                 )
             }
             BasicTextField(
@@ -228,7 +228,7 @@ fun NoteEditorScreen(
                     lineHeight = 36.sp
                 ),
                 cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.neumorphic().fillMaxSize()
             )
         }
     }
