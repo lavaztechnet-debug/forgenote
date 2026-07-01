@@ -7,6 +7,19 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.graphics.Color
+
+val DarkNeumorphicTheme = NeumorphicTheme(
+    surfaceColor = Color(0xFF121212),
+    shadowColor = Color.Black.copy(alpha = 0.3f),
+    lightShadowColor = Color.White.copy(alpha = 0.1f)
+)
+
+val LightNeumorphicTheme = NeumorphicTheme(
+    surfaceColor = Color(0xFFE0E0E0),
+    shadowColor = Color.Black.copy(alpha = 0.2f),
+    lightShadowColor = Color.White.copy(alpha = 0.5f)
+)
 
 val LocalNeumorphicTheme = staticCompositionLocalOf { LightNeumorphicTheme }
 
