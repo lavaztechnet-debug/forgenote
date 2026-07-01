@@ -26,6 +26,7 @@ val LocalNeumorphicTheme = staticCompositionLocalOf {
     )
 }
 
+<<<<<<< HEAD
 // Base Neumorphic Modifier - Non-composable version for use in non-composable contexts
 // This allows .neumorphic() to be chained without requiring @Composable context
 fun Modifier.neumorphic(): Modifier = this
@@ -66,4 +67,22 @@ fun Modifier.neumorphicCard(
         elevation = 6.dp,
         shape = MaterialTheme.shapes.medium
     )
+=======
+// These are now standard non-composable extension functions
+fun Modifier.neumorphic(): Modifier = this
+
+fun Modifier.neumorphicSurface(isPressed: Boolean = false): Modifier = composed {
+    val theme = LocalNeumorphicTheme.current
+    this.shadow(elevation = if (isPressed) 2.dp else 8.dp, shape = RectangleShape)
+}
+
+fun Modifier.neumorphicButton(isPressed: Boolean = false): Modifier = composed {
+    val theme = LocalNeumorphicTheme.current
+    this.shadow(elevation = if (isPressed) 2.dp else 8.dp, shape = RectangleShape)
+}
+
+fun Modifier.neumorphicCard(): Modifier = composed {
+    val theme = LocalNeumorphicTheme.current
+    this.shadow(elevation = 6.dp, shape = androidx.compose.material3.MaterialTheme.shapes.medium)
+>>>>>>> 6465d2b (chore: add multidex support and build fixes)
 }
