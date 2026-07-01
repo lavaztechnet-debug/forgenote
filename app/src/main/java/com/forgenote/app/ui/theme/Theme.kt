@@ -33,7 +33,7 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun ForgeNoteTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> ApplyGlobalTheme
+    content: @Composable () -> Unit
 ) {
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
     val neumorphicTheme = if (darkTheme) DarkNeumorphicTheme else LightNeumorphicTheme
@@ -46,5 +46,3 @@ fun ForgeNoteTheme(
         )
     }
 }
-
-typealias ApplyGlobalTheme = () -> Unit
