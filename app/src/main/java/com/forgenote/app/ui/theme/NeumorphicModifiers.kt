@@ -17,7 +17,7 @@ data class NeumorphicTheme(
     val lightShadowColor: Color
 )
 
-// Composition Local Provider for Neumorphic Theme
+// Composition Local Provider for Neumorphic Theme - initialized with light theme defaults
 val LocalNeumorphicTheme = staticCompositionLocalOf { 
     NeumorphicTheme(
         surfaceColor = Color(0xFFE0E0E0),
@@ -27,9 +27,11 @@ val LocalNeumorphicTheme = staticCompositionLocalOf {
 }
 
 // Base Neumorphic Modifier - Non-composable version for use in non-composable contexts
+// This allows .neumorphic() to be chained without requiring @Composable context
 fun Modifier.neumorphic(): Modifier = this
 
 // Composable Surface Neumorphic Modifier with elevation and shadow
+// Used for raised surfaces with press state
 @Composable
 fun Modifier.neumorphicSurface(
     theme: NeumorphicTheme = LocalNeumorphicTheme.current,
@@ -42,6 +44,7 @@ fun Modifier.neumorphicSurface(
 }
 
 // Composable Button Neumorphic Modifier with press state
+// Provides haptic-style elevation changes on interaction
 @Composable
 fun Modifier.neumorphicButton(
     theme: NeumorphicTheme = LocalNeumorphicTheme.current,
@@ -54,6 +57,7 @@ fun Modifier.neumorphicButton(
 }
 
 // Composable Card Neumorphic Modifier for card surfaces
+// Provides consistent shadow for card-like containers
 @Composable
 fun Modifier.neumorphicCard(
     theme: NeumorphicTheme = LocalNeumorphicTheme.current

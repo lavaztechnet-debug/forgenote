@@ -48,6 +48,9 @@ private val LightColorScheme = lightColorScheme(
 /**
  * Main Theme Composable for ForgeNote App
  * Applies Material 3 theming and Neumorphic design system
+ * 
+ * @param darkTheme Boolean indicating dark theme preference (defaults to system setting)
+ * @param content The composable content to theme
  */
 @Composable
 fun ForgeNoteTheme(
