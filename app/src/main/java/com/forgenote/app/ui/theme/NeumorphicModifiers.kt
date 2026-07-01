@@ -8,26 +8,58 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
+import androidx.compose.material3.MaterialTheme
 
+// Neumorphic Theme Data Class
 data class NeumorphicTheme(
     val surfaceColor: Color,
     val shadowColor: Color,
     val lightShadowColor: Color
 )
 
+// Composition Local Provider for Neumorphic Theme
+val LocalNeumorphicTheme = staticCompositionLocalOf { 
+    NeumorphicTheme(
+        surfaceColor = Color(0xFFE0E0E0),
+        shadowColor = Color.Black.copy(alpha = 0.2f),
+        lightShadowColor = Color.White.copy(alpha = 0.5f)
+    )
+}
+
+// Base Neumorphic Modifier - Non-composable version for use in non-composable contexts
 fun Modifier.neumorphic(): Modifier = this
 
+// Composable Surface Neumorphic Modifier with elevation and shadow
 @Composable
-fun Modifier.neumorphicSurface(theme: NeumorphicTheme = LocalNeumorphicTheme.current, isPressed: Boolean = false): Modifier = composed {
-    this.shadow(elevation = if (isPressed) 2.dp else 8.dp, shape = RectangleShape)
+fun Modifier.neumorphicSurface(
+    theme: NeumorphicTheme = LocalNeumorphicTheme.current,
+    isPressed: Boolean = false
+): Modifier = composed {
+    this.shadow(
+        elevation = if (isPressed) 2.dp else 8.dp,
+        shape = RectangleShape
+    )
 }
 
+// Composable Button Neumorphic Modifier with press state
 @Composable
-fun Modifier.neumorphicButton(theme: NeumorphicTheme = LocalNeumorphicTheme.current, isPressed: Boolean = false): Modifier = composed {
-    this.shadow(elevation = if (isPressed) 2.dp else 8.dp, shape = RectangleShape)
+fun Modifier.neumorphicButton(
+    theme: NeumorphicTheme = LocalNeumorphicTheme.current,
+    isPressed: Boolean = false
+): Modifier = composed {
+    this.shadow(
+        elevation = if (isPressed) 2.dp else 8.dp,
+        shape = RectangleShape
+    )
 }
 
+// Composable Card Neumorphic Modifier for card surfaces
 @Composable
-fun Modifier.neumorphicCard(theme: NeumorphicTheme = LocalNeumorphicTheme.current): Modifier = composed {
-    this.shadow(elevation = 6.dp, shape = androidx.compose.material3.MaterialTheme.shapes.medium)
+fun Modifier.neumorphicCard(
+    theme: NeumorphicTheme = LocalNeumorphicTheme.current
+): Modifier = composed {
+    this.shadow(
+        elevation = 6.dp,
+        shape = MaterialTheme.shapes.medium
+    )
 }
