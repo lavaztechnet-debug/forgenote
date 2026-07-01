@@ -65,7 +65,7 @@ fun AppNavigation() {
                     .fillMaxWidth()
                     .padding(16.dp)
                     .height(76.dp)
-                    .neumorphicSurface(theme = neumorphicTheme, isPressed = false)
+                    .neumorphicSurface(isPressed = false)
                     .padding(horizontal = 12.dp),
                 horizontalArrangement = Arrangement.SpaceAround,
                 verticalAlignment = Alignment.CenterVertically
@@ -85,7 +85,7 @@ fun AppNavigation() {
                             .fillMaxHeight()
                             .padding(vertical = 10.dp, horizontal = 6.dp)
                             .scale(scaleByState)
-                            .neumorphicSurface(theme = neumorphicTheme, isPressed = isSelected)
+                            .neumorphicSurface(isPressed = isSelected)
                             .clickable(
                                 interactionSource = remember { MutableInteractionSource() },
                                 indication = null
