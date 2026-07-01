@@ -1,0 +1,387 @@
+﻿2026-07-01T07:05:40.1875209Z Current runner version: '2.335.1'
+2026-07-01T07:05:40.1904662Z ##[group]Runner Image Provisioner
+2026-07-01T07:05:40.1905678Z Hosted Compute Agent
+2026-07-01T07:05:40.1906395Z Version: 20260611.554
+2026-07-01T07:05:40.1907071Z Commit: 5e0782fdc9014723d3be820dd114dd31555c2bd1
+2026-07-01T07:05:40.1907923Z Build Date: 2026-06-11T21:40:46Z
+2026-07-01T07:05:40.1908708Z Worker ID: {f8aa4291-bd55-4c15-93bb-e21b663b5ea9}
+2026-07-01T07:05:40.1909521Z Azure Region: northcentralus
+2026-07-01T07:05:40.1910205Z ##[endgroup]
+2026-07-01T07:05:40.1912616Z ##[group]Operating System
+2026-07-01T07:05:40.1913409Z Ubuntu
+2026-07-01T07:05:40.1914082Z 24.04.4
+2026-07-01T07:05:40.1914680Z LTS
+2026-07-01T07:05:40.1915276Z ##[endgroup]
+2026-07-01T07:05:40.1915894Z ##[group]Runner Image
+2026-07-01T07:05:40.1916644Z Image: ubuntu-24.04
+2026-07-01T07:05:40.1917271Z Version: 20260622.220.1
+2026-07-01T07:05:40.1918743Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260622.220/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-01T07:05:40.1920367Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260622.220
+2026-07-01T07:05:40.1922198Z ##[endgroup]
+2026-07-01T07:05:40.1923555Z ##[group]GITHUB_TOKEN Permissions
+2026-07-01T07:05:40.1926054Z Contents: read
+2026-07-01T07:05:40.1926716Z Metadata: read
+2026-07-01T07:05:40.1927443Z Packages: read
+2026-07-01T07:05:40.1928301Z ##[endgroup]
+2026-07-01T07:05:40.1930593Z Secret source: Actions
+2026-07-01T07:05:40.1932021Z Prepare workflow directory
+2026-07-01T07:05:40.2287320Z Prepare all required actions
+2026-07-01T07:05:40.2327654Z Getting action download info
+2026-07-01T07:05:40.4823521Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-07-01T07:05:40.5514806Z Download action repository 'actions/setup-java@v4' (SHA:c1e323688fd81a25caa38c78aa6df2d33d3e20d9)
+2026-07-01T07:05:41.0084435Z Download action repository 'gradle/actions@v3' (SHA:d9c87d481d55275bb5441eef3fe0e46805f9ef70)
+2026-07-01T07:05:41.8658496Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-07-01T07:05:42.1001585Z Complete job name: build
+2026-07-01T07:05:42.1781932Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-01T07:05:42.1790419Z ##[group]Run actions/checkout@v4
+2026-07-01T07:05:42.1791215Z with:
+2026-07-01T07:05:42.1791638Z   repository: lavaztechnet-debug/forgenote
+2026-07-01T07:05:42.1795611Z   token: ***
+2026-07-01T07:05:42.1795978Z   ssh-strict: true
+2026-07-01T07:05:42.1796353Z   ssh-user: git
+2026-07-01T07:05:42.1796734Z   persist-credentials: true
+2026-07-01T07:05:42.1797159Z   clean: true
+2026-07-01T07:05:42.1797537Z   sparse-checkout-cone-mode: true
+2026-07-01T07:05:42.1797961Z   fetch-depth: 1
+2026-07-01T07:05:42.1798355Z   fetch-tags: false
+2026-07-01T07:05:42.1798747Z   show-progress: true
+2026-07-01T07:05:42.1799132Z   lfs: false
+2026-07-01T07:05:42.1799546Z   submodules: false
+2026-07-01T07:05:42.1799926Z   set-safe-directory: true
+2026-07-01T07:05:42.1800499Z ##[endgroup]
+2026-07-01T07:05:42.3046485Z Syncing repository: lavaztechnet-debug/forgenote
+2026-07-01T07:05:42.3049295Z ##[group]Getting Git version info
+2026-07-01T07:05:42.3050250Z Working directory is '/home/runner/work/forgenote/forgenote'
+2026-07-01T07:05:42.3052063Z [command]/usr/bin/git version
+2026-07-01T07:05:42.3087909Z git version 2.54.0
+2026-07-01T07:05:42.3112425Z ##[endgroup]
+2026-07-01T07:05:42.3125964Z Temporarily overriding HOME='/home/runner/work/_temp/672f2b61-d6db-4e7a-be7a-7668eb993112' before making global git config changes
+2026-07-01T07:05:42.3127517Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-01T07:05:42.3131957Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/forgenote/forgenote
+2026-07-01T07:05:42.3184782Z Deleting the contents of '/home/runner/work/forgenote/forgenote'
+2026-07-01T07:05:42.3189422Z ##[group]Initializing the repository
+2026-07-01T07:05:42.3194785Z [command]/usr/bin/git init /home/runner/work/forgenote/forgenote
+2026-07-01T07:05:42.3273288Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-01T07:05:42.3274822Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-01T07:05:42.3275955Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-01T07:05:42.3276743Z hint: call:
+2026-07-01T07:05:42.3277752Z hint:
+2026-07-01T07:05:42.3278397Z hint: 	git config --global init.defaultBranch <name>
+2026-07-01T07:05:42.3279254Z hint:
+2026-07-01T07:05:42.3280033Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-01T07:05:42.3281009Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-01T07:05:42.3281692Z hint:
+2026-07-01T07:05:42.3282088Z hint: 	git branch -m <name>
+2026-07-01T07:05:42.3282550Z hint:
+2026-07-01T07:05:42.3283086Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-01T07:05:42.3283874Z Initialized empty Git repository in /home/runner/work/forgenote/forgenote/.git/
+2026-07-01T07:05:42.3292131Z [command]/usr/bin/git remote add origin https://github.com/lavaztechnet-debug/forgenote
+2026-07-01T07:05:42.3336351Z ##[endgroup]
+2026-07-01T07:05:42.3337321Z ##[group]Disabling automatic garbage collection
+2026-07-01T07:05:42.3342794Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-01T07:05:42.3475777Z ##[endgroup]
+2026-07-01T07:05:42.3477161Z ##[group]Setting up auth
+2026-07-01T07:05:42.3479235Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-01T07:05:42.3483454Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-01T07:05:42.3770045Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-01T07:05:42.3807719Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-01T07:05:42.4052434Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-01T07:05:42.4088819Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-01T07:05:42.4339166Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-01T07:05:42.4380487Z ##[endgroup]
+2026-07-01T07:05:42.4390341Z ##[group]Fetching the repository
+2026-07-01T07:05:42.4391604Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +261091c85f46a3627561426c99f3f78480a02f55:refs/remotes/origin/main
+2026-07-01T07:05:42.8491438Z From https://github.com/lavaztechnet-debug/forgenote
+2026-07-01T07:05:42.8492571Z  * [new ref]         261091c85f46a3627561426c99f3f78480a02f55 -> origin/main
+2026-07-01T07:05:42.8524160Z ##[endgroup]
+2026-07-01T07:05:42.8525062Z ##[group]Determining the checkout info
+2026-07-01T07:05:42.8527091Z ##[endgroup]
+2026-07-01T07:05:42.8533137Z [command]/usr/bin/git sparse-checkout disable
+2026-07-01T07:05:42.8578281Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-01T07:05:42.8606860Z ##[group]Checking out the ref
+2026-07-01T07:05:42.8611210Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-07-01T07:05:42.8687040Z Switched to a new branch 'main'
+2026-07-01T07:05:42.8688720Z branch 'main' set up to track 'origin/main'.
+2026-07-01T07:05:42.8695301Z ##[endgroup]
+2026-07-01T07:05:42.8749118Z [command]/usr/bin/git log -1 --format=%H
+2026-07-01T07:05:42.8775411Z 261091c85f46a3627561426c99f3f78480a02f55
+2026-07-01T07:05:42.9058863Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-01T07:05:42.9060948Z ##[group]Run actions/setup-java@v4
+2026-07-01T07:05:42.9061303Z with:
+2026-07-01T07:05:42.9061584Z   java-version: 17
+2026-07-01T07:05:42.9061884Z   distribution: temurin
+2026-07-01T07:05:42.9062195Z   java-package: jdk
+2026-07-01T07:05:42.9062489Z   check-latest: false
+2026-07-01T07:05:42.9062822Z   server-id: github
+2026-07-01T07:05:42.9063121Z   server-username: GITHUB_ACTOR
+2026-07-01T07:05:42.9063462Z   server-password: GITHUB_TOKEN
+2026-07-01T07:05:42.9063805Z   overwrite-settings: true
+2026-07-01T07:05:42.9064127Z   job-status: success
+2026-07-01T07:05:42.9067624Z   token: ***
+2026-07-01T07:05:42.9067924Z ##[endgroup]
+2026-07-01T07:05:43.0699336Z ##[group]Installed distributions
+2026-07-01T07:05:43.0752699Z Resolved Java 17.0.19+10 from tool-cache
+2026-07-01T07:05:43.0753444Z Setting Java 17.0.19+10 as the default
+2026-07-01T07:05:43.0766154Z (node:2290) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-01T07:05:43.0767226Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-01T07:05:43.0771040Z Creating toolchains.xml for JDK version 17 from temurin
+2026-07-01T07:05:43.0854070Z Writing to /home/runner/.m2/toolchains.xml
+2026-07-01T07:05:43.0861524Z 
+2026-07-01T07:05:43.0881946Z Java configuration:
+2026-07-01T07:05:43.0901909Z   Distribution: temurin
+2026-07-01T07:05:43.0902595Z   Version: 17.0.19+10
+2026-07-01T07:05:43.0903283Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-01T07:05:43.0903838Z 
+2026-07-01T07:05:43.0904717Z ##[endgroup]
+2026-07-01T07:05:43.0919827Z Creating settings.xml with server-id: github
+2026-07-01T07:05:43.0920338Z Writing to /home/runner/.m2/settings.xml
+2026-07-01T07:05:43.1131771Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-01T07:05:43.1133204Z ##[group]Run gradle/actions/setup-gradle@v3
+2026-07-01T07:05:43.1133574Z with:
+2026-07-01T07:05:43.1133863Z   gradle-version: 8.10.2
+2026-07-01T07:05:43.1134186Z   cache-disabled: false
+2026-07-01T07:05:43.1134494Z   cache-read-only: false
+2026-07-01T07:05:43.1134807Z   cache-write-only: false
+2026-07-01T07:05:43.1135139Z   cache-overwrite-existing: false
+2026-07-01T07:05:43.1135540Z   gradle-home-cache-includes: caches
+notifications
+
+2026-07-01T07:05:43.1135963Z   gradle-home-cache-cleanup: false
+2026-07-01T07:05:43.1136344Z   add-job-summary: always
+2026-07-01T07:05:43.1136684Z   add-job-summary-as-pr-comment: never
+2026-07-01T07:05:43.1137101Z   dependency-graph: disabled
+2026-07-01T07:05:43.1137465Z   dependency-graph-continue-on-failure: true
+2026-07-01T07:05:43.1137851Z   build-scan-publish: false
+2026-07-01T07:05:43.1138192Z   validate-wrappers: false
+2026-07-01T07:05:43.1138517Z   generate-job-summary: true
+2026-07-01T07:05:43.1138870Z   gradle-home-cache-strict-match: false
+2026-07-01T07:05:43.1139236Z   workflow-job-context: null
+2026-07-01T07:05:43.1142999Z   github-token: ***
+2026-07-01T07:05:43.1143303Z env:
+2026-07-01T07:05:43.1143703Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-01T07:05:43.1144293Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-01T07:05:43.1144762Z ##[endgroup]
+2026-07-01T07:05:43.3147653Z (node:2302) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-01T07:05:43.3149365Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-01T07:05:45.3529097Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2026-07-01T07:05:45.3531484Z ##[group]Restore Gradle state from cache
+2026-07-01T07:05:45.6263267Z ##[warning]Failed to restore gradle-home-v1|Linux|build[81c9dbb0e8e1df9c460cd196c993774b]-261091c85f46a3627561426c99f3f78480a02f55: Error: Cache service responded with 400
+2026-07-01T07:05:45.6319128Z Gradle User Home cache not found. Will initialize empty.
+2026-07-01T07:05:45.6319963Z ##[endgroup]
+2026-07-01T07:05:45.6762666Z ##[group]Provision Gradle 8.10.2
+2026-07-01T07:05:45.7105033Z ##[warning]Restore Gradle distribution 8.10.2 failed: Error: Cache service responded with 400
+2026-07-01T07:05:45.7106775Z Gradle distribution 8.10.2 not found in cache. Will download.
+2026-07-01T07:05:46.4412610Z Downloaded https://services.gradle.org/distributions/gradle-8.10.2-bin.zip to /home/runner/gradle-installations/downloads/gradle-8.10.2-bin.zip (size 136715430)
+2026-07-01T07:05:46.4656830Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/forgenote/forgenote --files-from manifest.txt --use-compress-program zstdmt
+2026-07-01T07:05:46.6367606Z ##[warning]Save Gradle distribution 8.10.2 failed: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0SrxEagAAAABjDdOnucbtQok06TpB7bjBQ0hHRURHRTE4MDYARWRnZQ==
+2026-07-01T07:05:46.6386367Z [command]/usr/bin/unzip -o -q /home/runner/gradle-installations/downloads/gradle-8.10.2-bin.zip
+2026-07-01T07:05:47.7193142Z Extracted Gradle 8.10.2 to /home/runner/gradle-installations/installs/gradle-8.10.2
+2026-07-01T07:05:47.7194283Z Provisioned Gradle executable /home/runner/gradle-installations/installs/gradle-8.10.2/bin/gradle
+2026-07-01T07:05:47.7195354Z ##[endgroup]
+2026-07-01T07:05:47.7401535Z ##[group]Run echo "GEMINI_API_KEY=***" > local.properties
+2026-07-01T07:05:47.7402340Z [36;1mecho "GEMINI_API_KEY=***" > local.properties[0m
+2026-07-01T07:05:47.7539039Z shell: /usr/bin/bash -e {0}
+2026-07-01T07:05:47.7539394Z env:
+2026-07-01T07:05:47.7539753Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-01T07:05:47.7540302Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-01T07:05:47.7540987Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-07-01T07:05:47.7541366Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-07-01T07:05:47.7541697Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2026-07-01T07:05:47.7542157Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-07-01T07:05:47.7542682Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-07-01T07:05:47.7543062Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-07-01T07:05:47.7543362Z ##[endgroup]
+2026-07-01T07:05:47.7664320Z ##[group]Run gradle assembleDebug
+2026-07-01T07:05:47.7664724Z [36;1mgradle assembleDebug[0m
+2026-07-01T07:05:47.7699168Z shell: /usr/bin/bash -e {0}
+2026-07-01T07:05:47.7699475Z env:
+2026-07-01T07:05:47.7699822Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-01T07:05:47.7700350Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-01T07:05:47.7701047Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-07-01T07:05:47.7701393Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-07-01T07:05:47.7701718Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2026-07-01T07:05:47.7702199Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-07-01T07:05:47.7702713Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-07-01T07:05:47.7703066Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-07-01T07:05:47.7703363Z ##[endgroup]
+2026-07-01T07:05:48.9834504Z 
+2026-07-01T07:05:48.9837328Z Welcome to Gradle 8.10.2!
+2026-07-01T07:05:48.9837835Z 
+2026-07-01T07:05:48.9838641Z Here are the highlights of this release:
+2026-07-01T07:05:48.9842253Z  - Support for Java 23
+2026-07-01T07:05:48.9843162Z  - Faster configuration cache
+2026-07-01T07:05:48.9844583Z  - Better configuration cache reports
+2026-07-01T07:05:48.9845060Z 
+2026-07-01T07:05:48.9849149Z For more details see https://docs.gradle.org/8.10.2/release-notes.html
+2026-07-01T07:05:48.9849502Z 
+2026-07-01T07:05:49.6792506Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-07-01T07:06:54.9796981Z > Task :app:preBuild UP-TO-DATE
+2026-07-01T07:06:54.9822459Z > Task :app:preDebugBuild UP-TO-DATE
+2026-07-01T07:06:54.9823255Z > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+2026-07-01T07:06:54.9824291Z > Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2026-07-01T07:06:55.0770544Z > Task :app:generateDebugBuildConfig
+2026-07-01T07:07:04.0841612Z 
+2026-07-01T07:07:04.0842189Z > Task :app:checkDebugAarMetadata FAILED
+2026-07-01T07:07:04.0883526Z FAILURE: Build failed with an exception.
+2026-07-01T07:07:04.0891715Z 
+2026-07-01T07:07:04.0891938Z 2 actionable tasks: 2 executed
+2026-07-01T07:07:04.0893356Z * What went wrong:
+2026-07-01T07:07:04.0900252Z Execution failed for task ':app:checkDebugAarMetadata'.
+2026-07-01T07:07:04.0902134Z > Configuration `:app:debugRuntimeClasspath` contains AndroidX dependencies, but the `android.useAndroidX` property is not enabled, which may cause runtime issues.
+2026-07-01T07:07:04.0924476Z   Set `android.useAndroidX=true` in the `gradle.properties` file and retry.
+2026-07-01T07:07:04.0925455Z   The following AndroidX dependencies are detected:
+2026-07-01T07:07:04.0926260Z   :app:debugRuntimeClasspath -> androidx.core:core-ktx:1.15.0
+2026-07-01T07:07:04.0928446Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.annotation:annotation:1.8.1
+2026-07-01T07:07:04.0934495Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.annotation:annotation:1.8.1 -> androidx.annotation:annotation-jvm:1.8.1
+2026-07-01T07:07:04.0939070Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3 -> androidx.core:core:1.15.0
+2026-07-01T07:07:04.0944196Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.annotation:annotation-experimental:1.4.1
+2026-07-01T07:07:04.0948243Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.collection:collection:1.4.4
+2026-07-01T07:07:04.0953829Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.collection:collection:1.4.4 -> androidx.collection:collection-jvm:1.4.4
+2026-07-01T07:07:04.0966201Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.collection:collection-ktx:1.4.4
+2026-07-01T07:07:04.0977232Z   :app:debugRuntimeClasspath -> com.google.ai.client.generativeai:generativeai:0.9.0 -> androidx.concurrent:concurrent-futures:1.2.0-alpha03
+2026-07-01T07:07:04.0979224Z   :app:debugRuntimeClasspath -> com.google.ai.client.generativeai:generativeai:0.9.0 -> androidx.concurrent:concurrent-futures-ktx:1.2.0-alpha03
+2026-07-01T07:07:04.0982830Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3 -> androidx.core:core:1.15.0 -> androidx.interpolator:interpolator:1.0.0
+2026-07-01T07:07:04.0987852Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3 -> androidx.lifecycle:lifecycle-runtime:2.8.7
+2026-07-01T07:07:04.0993253Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3 -> androidx.lifecycle:lifecycle-runtime:2.8.7 -> androidx.lifecycle:lifecycle-runtime-android:2.8.7
+2026-07-01T07:07:04.0997964Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-android:1.7.5 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.8.7 -> androidx.lifecycle:lifecycle-livedata-core:2.8.7 -> androidx.arch.core:core-common:2.2.0
+2026-07-01T07:07:04.1001943Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-android:1.7.5 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.8.7 -> androidx.lifecycle:lifecycle-livedata-core:2.8.7 -> androidx.arch.core:core-runtime:2.2.0
+2026-07-01T07:07:04.1005801Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-common:2.8.7
+2026-07-01T07:07:04.1010347Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-common:2.8.7 -> androidx.lifecycle:lifecycle-common-jvm:2.8.7
+2026-07-01T07:07:04.1014251Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.material3:material3-android:1.3.1 -> androidx.lifecycle:lifecycle-common-java8:2.8.7
+2026-07-01T07:07:04.1016679Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-android:1.7.5 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.8.7 -> androidx.lifecycle:lifecycle-livedata-core:2.8.7
+2026-07-01T07:07:04.1019539Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-android:1.7.5 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.8.7 -> androidx.lifecycle:lifecycle-runtime-compose:2.8.7
+2026-07-01T07:07:04.1022907Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-android:1.7.5 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.8.7 -> androidx.lifecycle:lifecycle-runtime-compose:2.8.7 -> androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7
+2026-07-01T07:07:04.1025103Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.runtime:runtime:1.7.5
+2026-07-01T07:07:04.1026312Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.runtime:runtime-android:1.7.5
+2026-07-01T07:07:04.1030030Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.runtime:runtime-saveable:1.7.5
+2026-07-01T07:07:04.1031683Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.runtime:runtime-saveable-android:1.7.5
+2026-07-01T07:07:04.1032923Z   :app:debugRuntimeClasspath -> androidx.lifecycle:lifecycle-runtime-ktx:2.8.7
+2026-07-01T07:07:04.1034174Z   :app:debugRuntimeClasspath -> androidx.lifecycle:lifecycle-runtime-ktx:2.8.7 -> androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7
+2026-07-01T07:07:04.1037211Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3 -> androidx.lifecycle:lifecycle-viewmodel:2.8.7
+2026-07-01T07:07:04.1042464Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3 -> androidx.lifecycle:lifecycle-viewmodel:2.8.7 -> androidx.lifecycle:lifecycle-viewmodel-android:2.8.7
+2026-07-01T07:07:04.1051085Z   :app:debugRuntimeClasspath -> androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7
+2026-07-01T07:07:04.1052561Z   :app:debugRuntimeClasspath -> androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7 -> androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7
+2026-07-01T07:07:04.1053842Z   :app:debugRuntimeClasspath -> androidx.compose.ui:ui:1.7.5
+2026-07-01T07:07:04.1054895Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-android:1.7.5
+2026-07-01T07:07:04.1057316Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3
+2026-07-01T07:07:04.1061659Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3
+2026-07-01T07:07:04.1065632Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7
+2026-07-01T07:07:04.1070120Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3 -> androidx.savedstate:savedstate:1.2.1
+2026-07-01T07:07:04.1074291Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.savedstate:savedstate-ktx:1.2.1
+2026-07-01T07:07:04.1078019Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7
+2026-07-01T07:07:04.1081312Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-android:1.7.5 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.8.7
+2026-07-01T07:07:04.1083561Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-android:1.7.5 -> androidx.emoji2:emoji2:1.3.0 -> androidx.startup:startup-runtime:1.1.1
+2026-07-01T07:07:04.1086756Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3 -> androidx.tracing:tracing:1.2.0
+2026-07-01T07:07:04.1096211Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.profileinstaller:profileinstaller:1.3.1
+2026-07-01T07:07:04.1098014Z   :app:debugRuntimeClasspath -> androidx.activity:activity-compose:1.9.3
+2026-07-01T07:07:04.1098827Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-android:1.7.5 -> androidx.autofill:autofill:1.0.0
+2026-07-01T07:07:04.1099701Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-geometry:1.7.5
+2026-07-01T07:07:04.1100475Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-geometry-android:1.7.5
+2026-07-01T07:07:04.1101734Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-util:1.7.5
+2026-07-01T07:07:04.1102842Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-util-android:1.7.5
+2026-07-01T07:07:04.1103774Z   :app:debugRuntimeClasspath -> androidx.compose.ui:ui-graphics:1.7.5
+2026-07-01T07:07:04.1105042Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-graphics-android:1.7.5
+2026-07-01T07:07:04.1106191Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-unit:1.7.5
+2026-07-01T07:07:04.1107302Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-unit-android:1.7.5
+2026-07-01T07:07:04.1108423Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-text:1.7.5
+2026-07-01T07:07:04.1109527Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-text-android:1.7.5
+2026-07-01T07:07:04.1111057Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-android:1.7.5 -> androidx.emoji2:emoji2:1.3.0
+2026-07-01T07:07:04.1112293Z   :app:debugRuntimeClasspath -> androidx.compose.ui:ui-tooling-preview:1.7.5
+2026-07-01T07:07:04.1113661Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-tooling-preview-android:1.7.5
+2026-07-01T07:07:04.1115568Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-graphics-android:1.7.5 -> androidx.graphics:graphics-path:1.0.1
+2026-07-01T07:07:04.1117442Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.ui:ui-android:1.7.5 -> androidx.customview:customview-poolingcontainer:1.0.0
+2026-07-01T07:07:04.1123069Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation:1.7.5
+2026-07-01T07:07:04.1124350Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-android:1.7.5
+2026-07-01T07:07:04.1125570Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.animation:animation:1.7.5
+2026-07-01T07:07:04.1127061Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.animation:animation-android:1.7.5
+2026-07-01T07:07:04.1128429Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.animation:animation-core:1.7.5
+2026-07-01T07:07:04.1152554Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.animation:animation-core-android:1.7.5
+2026-07-01T07:07:04.1154043Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-layout:1.7.5
+2026-07-01T07:07:04.1155447Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.foundation:foundation-layout-android:1.7.5
+2026-07-01T07:07:04.1158491Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3 -> androidx.activity:activity:1.9.3 -> androidx.core:core:1.15.0 -> androidx.versionedparcelable:versionedparcelable:1.1.1
+2026-07-01T07:07:04.1182103Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01
+2026-07-01T07:07:04.1182922Z   :app:debugRuntimeClasspath -> androidx.compose.material3:material3:1.3.1
+2026-07-01T07:07:04.1184001Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.material3:material3-android:1.3.1
+2026-07-01T07:07:04.1185317Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.material:material-icons-core:1.7.5
+2026-07-01T07:07:04.1186617Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.material:material-icons-core-android:1.7.5
+2026-07-01T07:07:04.1187961Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.material:material-ripple:1.7.5
+2026-07-01T07:07:04.1189721Z   :app:debugRuntimeClasspath -> androidx.compose:compose-bom:2024.10.01 -> androidx.compose.material:material-ripple-android:1.7.5
+2026-07-01T07:07:04.1220254Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4
+2026-07-01T07:07:04.1222600Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4
+2026-07-01T07:07:04.1225615Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4
+2026-07-01T07:07:04.1228647Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4
+2026-07-01T07:07:04.1232409Z   :app:debugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime:2.8.4
+2026-07-01T07:07:04.1234282Z   :app:debugRuntimeClasspath -> androidx.room:room-runtime:2.6.1
+2026-07-01T07:07:04.1235108Z   :app:debugRuntimeClasspath -> androidx.room:room-runtime:2.6.1 -> androidx.room:room-common:2.6.1
+2026-07-01T07:07:04.1235972Z   :app:debugRuntimeClasspath -> androidx.room:room-ktx:2.6.1
+2026-07-01T07:07:04.1236711Z   :app:debugRuntimeClasspath -> androidx.room:room-runtime:2.6.1 -> androidx.sqlite:sqlite:2.4.0
+2026-07-01T07:07:04.1237739Z   :app:debugRuntimeClasspath -> androidx.room:room-runtime:2.6.1 -> androidx.sqlite:sqlite-framework:2.4.0
+2026-07-01T07:07:04.1238320Z 
+2026-07-01T07:07:04.1238475Z * Try:
+2026-07-01T07:07:04.1238836Z > Run with --stacktrace option to get the stack trace.
+2026-07-01T07:07:04.1239417Z > Run with --info or --debug option to get more log output.
+2026-07-01T07:07:04.1239932Z > Run with --scan to get full insights.
+2026-07-01T07:07:04.1240373Z > Get more help at https://help.gradle.org.
+2026-07-01T07:07:04.1241266Z 
+2026-07-01T07:07:04.1242396Z BUILD FAILED in 1m 16s
+2026-07-01T07:07:04.6291906Z ##[error]Process completed with exit code 1.
+2026-07-01T07:07:04.6480873Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-01T07:07:04.6482106Z Post job cleanup.
+2026-07-01T07:07:04.8466888Z In post-action step
+2026-07-01T07:07:04.8476271Z Stopping all Gradle daemons before saving Gradle User Home state
+2026-07-01T07:07:04.8477562Z Stopping Gradle daemons for /home/runner/gradle-installations/installs/gradle-8.10.2
+2026-07-01T07:07:04.8490164Z (node:2543) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-01T07:07:04.8491519Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-01T07:07:04.8497971Z [command]/home/runner/gradle-installations/installs/gradle-8.10.2/bin/gradle --stop
+2026-07-01T07:07:05.5815299Z Stopping Daemon(s)
+2026-07-01T07:07:05.5971962Z 1 Daemon stopped
+2026-07-01T07:07:05.6088426Z ##[group]Caching Gradle state
+2026-07-01T07:07:05.6222867Z Caching generated-gradle-jars with path '/home/runner/.gradle/caches/8.10.2/generated-gradle-jars/gradle-api-8.10.2.jar' and cache key: gradle-generated-gradle-jars-v1-2745217bed79d67c9856a7ed393e27bf
+2026-07-01T07:07:05.6391807Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/forgenote/forgenote --files-from manifest.txt --use-compress-program zstdmt
+2026-07-01T07:07:06.0195552Z Caching dependencies with path '/home/runner/.gradle/caches/modules-*/files-*/*/*/*/*' and cache key: gradle-dependencies-v1-407a48def37ea8818e52b04bf380a631
+2026-07-01T07:07:06.0343639Z Caching instrumented-jars with path '/home/runner/.gradle/caches/jars-*/*/' and cache key: gradle-instrumented-jars-v1-a28e35082f8b33a768a79c3127096ff5
+2026-07-01T07:07:06.0522525Z Caching kotlin-dsl with path '/home/runner/.gradle/caches/*/kotlin-dsl/accessors/*/
+2026-07-01T07:07:06.0526157Z /home/runner/.gradle/caches/*/kotlin-dsl/scripts/*/' and cache key: gradle-kotlin-dsl-v1-7dd56da72a8f2ddff70d50c3b1ce6119
+2026-07-01T07:07:06.0636374Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/forgenote/forgenote --files-from manifest.txt --use-compress-program zstdmt
+2026-07-01T07:07:06.0761133Z Caching groovy-dsl with path '/home/runner/.gradle/caches/*/groovy-dsl/*/' and cache key: gradle-groovy-dsl-v1-e23562015aa7162c30280845e0894d63
+2026-07-01T07:07:06.1212052Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/forgenote/forgenote --files-from manifest.txt --use-compress-program zstdmt
+2026-07-01T07:07:06.1401100Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/jars-*/*/' and key: gradle-instrumented-jars-v1-a28e35082f8b33a768a79c3127096ff5: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0mrxEagAAAACbIXbdBOwFRKRWHismv3z3Q0hHRURHRTE5MTgARWRnZQ==
+2026-07-01T07:07:06.1579690Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/forgenote/forgenote --files-from manifest.txt --use-compress-program zstdmt
+2026-07-01T07:07:06.1651278Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/8.10.2/generated-gradle-jars/gradle-api-8.10.2.jar' and key: gradle-generated-gradle-jars-v1-2745217bed79d67c9856a7ed393e27bf: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0mrxEagAAAAADVbkcDbvMTIys4wqrLDBPQ0hHRURHRTE4MjIARWRnZQ==
+2026-07-01T07:07:06.2274177Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/*/groovy-dsl/*/' and key: gradle-groovy-dsl-v1-e23562015aa7162c30280845e0894d63: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0mrxEagAAAACZfxlrpUv9QbL+yG5lscRJQ0hJMzBFREdFMDQxMwBFZGdl
+2026-07-01T07:07:06.2365124Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/*/kotlin-dsl/accessors/*/
+/home/runner/.gradle/caches/*/kotlin-dsl/scripts/*/' and key: gradle-kotlin-dsl-v1-7dd56da72a8f2ddff70d50c3b1ce6119: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0mrxEagAAAAAVat69tpE1TqZuq6P9i8UJQ0hJMzBFREdFMDIyMABFZGdl
+2026-07-01T07:07:06.4436807Z Caching transforms with path '/home/runner/.gradle/caches/transforms-4/*/
+2026-07-01T07:07:06.4437625Z /home/runner/.gradle/caches/*/transforms/*/' and cache key: gradle-transforms-v1-028a58c30faf943057ad855a6d79f6af
+2026-07-01T07:07:06.5784735Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/forgenote/forgenote --files-from manifest.txt --use-compress-program zstdmt
+2026-07-01T07:07:06.6860580Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/forgenote/forgenote --files-from manifest.txt --use-compress-program zstdmt
+2026-07-01T07:07:07.3643847Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/modules-*/files-*/*/*/*/*' and key: gradle-dependencies-v1-407a48def37ea8818e52b04bf380a631: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0m7xEagAAAAAMU9VK0+M+QrjEyFPvD2yLQ0hJMzBFREdFMDIxOABFZGdl
+2026-07-01T07:07:08.0026338Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/transforms-4/*/
+/home/runner/.gradle/caches/*/transforms/*/' and key: gradle-transforms-v1-028a58c30faf943057ad855a6d79f6af: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0m7xEagAAAAAHayo6oZK6SaJY+oNcC+JRQ0hJMzBFREdFMDIyMABFZGdl
+2026-07-01T07:07:08.2341438Z Caching Gradle User Home with cache key: gradle-home-v1|Linux|build[81c9dbb0e8e1df9c460cd196c993774b]-261091c85f46a3627561426c99f3f78480a02f55
+2026-07-01T07:07:08.2438657Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/forgenote/forgenote --files-from manifest.txt --use-compress-program zstdmt
+2026-07-01T07:07:08.3552751Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle' and key: gradle-home-v1|Linux|build[81c9dbb0e8e1df9c460cd196c993774b]-261091c85f46a3627561426c99f3f78480a02f55: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0nLxEagAAAADnqJSUw8GxTJoQQmiaXHPYQ0hJMzBFREdFMDQwOQBFZGdl
+2026-07-01T07:07:08.3558467Z ##[endgroup]
+2026-07-01T07:07:08.3559070Z Generating Job Summary
+2026-07-01T07:07:08.3569236Z Completed post-action step
+2026-07-01T07:07:08.3773436Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-01T07:07:08.3774651Z Post job cleanup.
+2026-07-01T07:07:08.5132649Z (node:2655) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-01T07:07:08.5133451Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-01T07:07:08.5295950Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-01T07:07:08.5297145Z Post job cleanup.
+2026-07-01T07:07:08.6234947Z [command]/usr/bin/git version
+2026-07-01T07:07:08.6273309Z git version 2.54.0
+2026-07-01T07:07:08.6310463Z Temporarily overriding HOME='/home/runner/work/_temp/b6060627-6749-4de5-9b3d-e36ae23d974c' before making global git config changes
+2026-07-01T07:07:08.6311865Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-01T07:07:08.6317192Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/forgenote/forgenote
+2026-07-01T07:07:08.6357424Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-01T07:07:08.6397135Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-01T07:07:08.6644773Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-01T07:07:08.6671998Z http.https://github.com/.extraheader
+2026-07-01T07:07:08.6683649Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-07-01T07:07:08.6717228Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-01T07:07:08.6990101Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-01T07:07:08.7026351Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-01T07:07:08.7435754Z Cleaning up orphan processes
+2026-07-01T07:07:08.7725927Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, gradle/actions/setup-gradle@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
