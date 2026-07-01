@@ -19,17 +19,18 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
+
+    - name: Setup Gradle Automated Engine
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: 8.10.2
 
     - name: Inject Gemini API Key Configuration
       run: |
         echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > local.properties
 
-    - name: Grant Execute Permission to Gradle Wrapper
-      run: chmod +x gradlew
-
     - name: Assemble Debug Package Binaries
-      run: ./gradlew assembleDebug
+      run: gradle assembleDebug
 
     - name: Upload Compiled Debug APK Artifact
       uses: actions/upload-artifact@v4
