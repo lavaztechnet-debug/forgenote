@@ -14,14 +14,6 @@ data class NeumorphicTheme(
     val lightShadowColor: Color
 )
 
-val LocalNeumorphicTheme = staticCompositionLocalOf {
-    NeumorphicTheme(
-        surfaceColor = Color(0xFFE0E0E0),
-        shadowColor = Color.Black.copy(alpha = 0.2f),
-        lightShadowColor = Color.White.copy(alpha = 0.5f)
-    )
-}
-
 fun Modifier.neumorphic(): Modifier = this
 
 fun Modifier.neumorphicSurface(theme: NeumorphicTheme = LocalNeumorphicTheme.current, isPressed: Boolean = false): Modifier = composed {
