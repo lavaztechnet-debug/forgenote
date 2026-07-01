@@ -38,7 +38,9 @@ fun ForgeNoteTheme(
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
     val neumorphicTheme = if (darkTheme) DarkNeumorphicTheme else LightNeumorphicTheme
 
-    CompositionLocalProvider(LocalNeumorphicTheme provides neumorphicTheme) {
+    CompositionLocalProvider(
+        LocalNeumorphicTheme provides neumorphicTheme
+    ) {
         MaterialTheme(
             colorScheme = colorScheme,
             typography = Typography,
