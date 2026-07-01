@@ -4,25 +4,26 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
+// Dark Theme Neumorphic Configuration
 val DarkNeumorphicTheme = NeumorphicTheme(
     surfaceColor = Color(0xFF121212),
     shadowColor = Color.Black.copy(alpha = 0.3f),
     lightShadowColor = Color.White.copy(alpha = 0.1f)
 )
 
+// Light Theme Neumorphic Configuration
 val LightNeumorphicTheme = NeumorphicTheme(
     surfaceColor = Color(0xFFE0E0E0),
     shadowColor = Color.Black.copy(alpha = 0.2f),
     lightShadowColor = Color.White.copy(alpha = 0.5f)
 )
 
-val LocalNeumorphicTheme = staticCompositionLocalOf { LightNeumorphicTheme }
-
+// Material 3 Dark Color Scheme
 private val DarkColorScheme = darkColorScheme(
     primary = DarkAccentTeal,
     background = DarkBackground,
@@ -33,6 +34,7 @@ private val DarkColorScheme = darkColorScheme(
     onSurfaceVariant = DarkTextSecondary
 )
 
+// Material 3 Light Color Scheme
 private val LightColorScheme = lightColorScheme(
     primary = LightAccentTeal,
     background = LightBackground,
@@ -43,6 +45,10 @@ private val LightColorScheme = lightColorScheme(
     onSurfaceVariant = LightTextSecondary
 )
 
+/**
+ * Main Theme Composable for ForgeNote App
+ * Applies Material 3 theming and Neumorphic design system
+ */
 @Composable
 fun ForgeNoteTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
