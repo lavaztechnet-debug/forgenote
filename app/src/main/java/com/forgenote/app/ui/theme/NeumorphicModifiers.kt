@@ -15,7 +15,6 @@ data class NeumorphicTheme(
     val lightShadowColor: Color
 )
 
-@Composable
 fun Modifier.neumorphic(): Modifier = this
 
 @Composable
