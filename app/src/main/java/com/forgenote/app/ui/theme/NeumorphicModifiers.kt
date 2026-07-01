@@ -1,5 +1,6 @@
 package com.forgenote.app.ui.theme
 
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
@@ -14,16 +15,20 @@ data class NeumorphicTheme(
     val lightShadowColor: Color
 )
 
+@Composable
 fun Modifier.neumorphic(): Modifier = this
 
+@Composable
 fun Modifier.neumorphicSurface(theme: NeumorphicTheme = LocalNeumorphicTheme.current, isPressed: Boolean = false): Modifier = composed {
     this.shadow(elevation = if (isPressed) 2.dp else 8.dp, shape = RectangleShape)
 }
 
+@Composable
 fun Modifier.neumorphicButton(theme: NeumorphicTheme = LocalNeumorphicTheme.current, isPressed: Boolean = false): Modifier = composed {
     this.shadow(elevation = if (isPressed) 2.dp else 8.dp, shape = RectangleShape)
 }
 
+@Composable
 fun Modifier.neumorphicCard(theme: NeumorphicTheme = LocalNeumorphicTheme.current): Modifier = composed {
     this.shadow(elevation = 6.dp, shape = androidx.compose.material3.MaterialTheme.shapes.medium)
 }
