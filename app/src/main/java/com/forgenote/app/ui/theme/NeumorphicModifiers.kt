@@ -26,20 +26,26 @@ val LocalNeumorphicTheme = staticCompositionLocalOf {
     )
 }
 
-// These are now standard non-composable extension functions
+// Base Neumorphic Modifier - Non-composable version for use in non-composable contexts
 fun Modifier.neumorphic(): Modifier = this
 
+// Composable Surface Neumorphic Modifier with elevation and shadow
+// Used for raised surfaces with press state
 fun Modifier.neumorphicSurface(isPressed: Boolean = false): Modifier = composed {
     val theme = LocalNeumorphicTheme.current
     this.shadow(elevation = if (isPressed) 2.dp else 8.dp, shape = RectangleShape)
 }
 
+// Composable Button Neumorphic Modifier with press state
+// Provides haptic-style elevation changes on interaction
 fun Modifier.neumorphicButton(isPressed: Boolean = false): Modifier = composed {
     val theme = LocalNeumorphicTheme.current
     this.shadow(elevation = if (isPressed) 2.dp else 8.dp, shape = RectangleShape)
 }
 
+// Composable Card Neumorphic Modifier for card surfaces
+// Provides consistent shadow for card-like containers
 fun Modifier.neumorphicCard(): Modifier = composed {
     val theme = LocalNeumorphicTheme.current
-    this.shadow(elevation = 6.dp, shape = androidx.compose.material3.MaterialTheme.shapes.medium)
+    this.shadow(elevation = 6.dp, shape = MaterialTheme.shapes.medium)
 }
