@@ -63,7 +63,7 @@ fun PromptsScreen(
         Column(
             modifier = Modifier.neumorphic()
                 .fillMaxWidth()
-                .neumorphicCard(theme)
+                .neumorphicCard()
                 .background(theme.surfaceColor, shape = MaterialTheme.shapes.medium)
                 .padding(14.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp)
@@ -79,7 +79,7 @@ fun PromptsScreen(
                 modifier = Modifier.neumorphic()
                     .fillMaxWidth()
                     .height(44.dp)
-                    .neumorphicSurface(theme, isPressed = true)
+                    .neumorphicSurface(isPressed = true)
                     .padding(horizontal = 12.dp, vertical = 10.dp),
                 contentAlignment = Alignment.CenterStart
             ) {
@@ -100,7 +100,7 @@ fun PromptsScreen(
                 modifier = Modifier.neumorphic()
                     .fillMaxWidth()
                     .height(80.dp)
-                    .neumorphicSurface(theme, isPressed = true)
+                    .neumorphicSurface(isPressed = true)
                     .padding(horizontal = 12.dp, vertical = 10.dp),
                 contentAlignment = Alignment.TopStart
             ) {
@@ -131,7 +131,7 @@ fun PromptsScreen(
                             .weight(1f)
                             .height(36.dp)
                             .scale(tagScale)
-                            .neumorphicSurface(theme, isPressed = isTagSelected)
+                            .neumorphicSurface(isPressed = isTagSelected)
                             .clickable(
                                 interactionSource = remember { MutableInteractionSource() },
                                 indication = null
@@ -157,7 +157,7 @@ fun PromptsScreen(
                     .fillMaxWidth()
                     .height(48.dp)
                     .scale(forgeScale)
-                    .neumorphicButton(theme, isPressed = forgePressed)
+                    .neumorphicButton(isPressed = forgePressed)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null
@@ -194,7 +194,7 @@ fun PromptsScreen(
                 Box(
                     modifier = Modifier.neumorphic()
                         .fillMaxWidth()
-                        .neumorphicCard(theme)
+                        .neumorphicCard()
                         .background(theme.surfaceColor, shape = MaterialTheme.shapes.medium)
                         .padding(16.dp)
                 ) {
@@ -247,7 +247,7 @@ fun PromptsScreen(
                                     .weight(1f)
                                     .height(40.dp)
                                     .scale(copyScale)
-                                    .neumorphicButton(theme, isPressed = copyPressed)
+                                    .neumorphicButton(isPressed = copyPressed)
                                     .clickable(
                                         interactionSource = remember { MutableInteractionSource() },
                                         indication = null
@@ -277,7 +277,7 @@ fun PromptsScreen(
                                     .weight(1f)
                                     .height(40.dp)
                                     .scale(sendScale)
-                                    .neumorphicButton(theme, isPressed = sendPressed)
+                                    .neumorphicButton(isPressed = sendPressed)
                                     .clickable(
                                         interactionSource = remember { MutableInteractionSource() },
                                         indication = null
