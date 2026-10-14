@@ -8,6 +8,8 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import com.forgenote.app.ui.theme.neumorphicButton
+import com.forgenote.app.ui.theme.neumorphicCard
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -23,9 +25,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.forgenote.app.data.room.NoteEntity
 import com.forgenote.app.ui.theme.LocalNeumorphicTheme
-import com.forgenote.app.ui.theme.neumorphic
-import com.forgenote.app.ui.theme.neumorphicCard
-import com.forgenote.app.ui.theme.neumorphicButton
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -53,13 +52,13 @@ fun NotesScreen(
     )
 
     Box(
-        modifier = Modifier.neumorphic()
+        modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
-        Column(modifier = Modifier.neumorphic().fillMaxSize()) {
-            Box(modifier = Modifier.neumorphic().padding(bottom = 16.dp)) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            Box(modifier = Modifier.padding(bottom = 16.dp)) {
                 Text(
                     text = "ForgeNote Vault",
                     style = MaterialTheme.typography.headlineLarge,
@@ -69,7 +68,7 @@ fun NotesScreen(
 
             if (notes.isEmpty()) {
                 Box(
-                    modifier = Modifier.neumorphic().weight(1f).fillMaxWidth(),
+                    modifier = Modifier.weight(1f).fillMaxWidth(),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
@@ -80,7 +79,7 @@ fun NotesScreen(
                 }
             } else {
                 LazyColumn(
-                    modifier = Modifier.neumorphic().weight(1f),
+                    modifier = Modifier.weight(1f),
                     verticalArrangement = Arrangement.spacedBy(18.dp)
                 ) {
                     items(notes, key = { it.id }) { note ->
@@ -95,10 +94,10 @@ fun NotesScreen(
                         val dateStr = sdf.format(Date(note.updatedAt))
 
                         Box(
-                            modifier = Modifier.neumorphic()
+                            modifier = Modifier
                                 .fillMaxWidth()
                                 .scale(cardScale)
-                                .neumorphicCard(theme)
+                                .neumorphicCard()
                                 .background(theme.surfaceColor, shape = MaterialTheme.shapes.medium)
                                 .clickable(
                                     interactionSource = remember { MutableInteractionSource() },
@@ -113,20 +112,20 @@ fun NotesScreen(
                                 }
                                 .padding(16.dp)
                         ) {
-                            Column(modifier = Modifier.neumorphic().fillMaxWidth().padding(end = 40.dp)) {
+                            Column(modifier = Modifier.fillMaxWidth().padding(end = 40.dp)) {
                                 Text(
                                     text = if (note.title.isBlank()) "Untitled" else note.title,
                                     style = MaterialTheme.typography.headlineMedium,
                                     color = MaterialTheme.colorScheme.onBackground
                                 )
-                                Spacer(modifier = Modifier.neumorphic().height(4.dp))
+                                Spacer(modifier = Modifier.height(4.dp))
                                 Text(
                                     text = note.body,
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     maxLines = 2
                                 )
-                                Spacer(modifier = Modifier.neumorphic().height(8.dp))
+                                Spacer(modifier = Modifier.height(8.dp))
                                 Text(
                                     text = dateStr,
                                     style = MaterialTheme.typography.labelLarge,
@@ -136,7 +135,7 @@ fun NotesScreen(
 
                             IconButton(
                                 onClick = { viewModel.deleteNote(note) },
-                                modifier = Modifier.neumorphic().align(Alignment.TopEnd)
+                                modifier = Modifier.align(Alignment.TopEnd)
                             ) {
                                 Icon(
                                     imageVector = Icons.Default.Delete,
@@ -158,12 +157,12 @@ fun NotesScreen(
         )
 
         Box(
-            modifier = Modifier.neumorphic()
+            modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .padding(bottom = 16.dp, end = 8.dp)
                 .size(64.dp)
                 .scale(animatedFabScale)
-                .neumorphicButton(theme, isPressed = fabPressed)
+                .neumorphicButton(isPressed = fabPressed)
                 .background(
                     brush = Brush.radialGradient(
                         colors = if (isDark) {
@@ -191,7 +190,7 @@ fun NotesScreen(
                 imageVector = Icons.Default.Add,
                 contentDescription = "Create Note",
                 tint = Color.White,
-                modifier = Modifier.neumorphic().size(28.dp)
+                modifier = Modifier.size(28.dp)
             )
         }
     }

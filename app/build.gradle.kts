@@ -38,6 +38,15 @@ android {
             val apiKey = localProperties.getProperty("GEMINI_API_KEY") ?: "PASTE_YOUR_KEY_HERE"
             buildConfigField("String", "GEMINI_API_KEY", "\"$apiKey\"")
         }
+        release {
+            val localProperties = Properties()
+            val localPropertiesFile = rootProject.file("local.properties")
+            if (localPropertiesFile.exists()) {
+                localPropertiesFile.inputStream().use { localProperties.load(it) }
+            }
+            val apiKey = localProperties.getProperty("GEMINI_API_KEY") ?: "PASTE_YOUR_KEY_HERE"
+            buildConfigField("String", "GEMINI_API_KEY", "\"$apiKey\"")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
