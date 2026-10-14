@@ -27,7 +27,6 @@ val LocalNeumorphicTheme = staticCompositionLocalOf {
 }
 
 // Base Neumorphic Modifier - Non-composable version for use in non-composable contexts
-fun Modifier.neumorphic(): Modifier = this
 
 // Composable Surface Neumorphic Modifier with elevation and shadow
 // Used for raised surfaces with press state

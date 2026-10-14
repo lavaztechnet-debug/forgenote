@@ -8,6 +8,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.BasicTextField
+import com.forgenote.app.ui.theme.neumorphicButton
+import com.forgenote.app.ui.theme.neumorphicCard
+import com.forgenote.app.ui.theme.neumorphicSurface
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.Delete
@@ -24,10 +27,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.forgenote.app.data.room.PromptEntity
 import com.forgenote.app.ui.theme.LocalNeumorphicTheme
-import com.forgenote.app.ui.theme.neumorphic
-import com.forgenote.app.ui.theme.neumorphicButton
-import com.forgenote.app.ui.theme.neumorphicCard
-import com.forgenote.app.ui.theme.neumorphicSurface
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -47,7 +46,7 @@ fun PromptsScreen(
     val tags = listOf("Code", "Creative", "Analysis")
 
     Column(
-        modifier = Modifier.neumorphic()
+        modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
@@ -56,12 +55,12 @@ fun PromptsScreen(
             text = "Prompt Engineering Lab",
             style = MaterialTheme.typography.headlineLarge,
             color = MaterialTheme.colorScheme.onBackground,
-            modifier = Modifier.neumorphic().padding(bottom = 16.dp)
+            modifier = Modifier.padding(bottom = 16.dp)
         )
 
         // Form Container Input Block (Raised Panel Frame)
         Column(
-            modifier = Modifier.neumorphic()
+            modifier = Modifier
                 .fillMaxWidth()
                 .neumorphicCard()
                 .background(theme.surfaceColor, shape = MaterialTheme.shapes.medium)
@@ -76,7 +75,7 @@ fun PromptsScreen(
 
             // Title Input (Carved Well)
             Box(
-                modifier = Modifier.neumorphic()
+                modifier = Modifier
                     .fillMaxWidth()
                     .height(44.dp)
                     .neumorphicSurface(isPressed = true)
@@ -91,13 +90,13 @@ fun PromptsScreen(
                     onValueChange = { inputTitle = it },
                     textStyle = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onBackground),
                     cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
-                    modifier = Modifier.neumorphic().fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth()
                 )
             }
 
             // Body Input (Carved Well)
             Box(
-                modifier = Modifier.neumorphic()
+                modifier = Modifier
                     .fillMaxWidth()
                     .height(80.dp)
                     .neumorphicSurface(isPressed = true)
@@ -112,13 +111,13 @@ fun PromptsScreen(
                     onValueChange = { inputBody = it },
                     textStyle = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onBackground),
                     cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
-                    modifier = Modifier.neumorphic().fillMaxSize()
+                    modifier = Modifier.fillMaxSize()
                 )
             }
 
             // Tag Select Execution Platform
             Row(
-                modifier = Modifier.neumorphic().fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -127,7 +126,7 @@ fun PromptsScreen(
                     val tagScale by animateFloatAsState(if (isTagSelected) 0.96f else 1.0f, label = "TagScale")
                     
                     Box(
-                        modifier = Modifier.neumorphic()
+                        modifier = Modifier
                             .weight(1f)
                             .height(36.dp)
                             .scale(tagScale)
@@ -153,7 +152,7 @@ fun PromptsScreen(
             var forgePressed by remember { mutableStateOf(false) }
             val forgeScale by animateFloatAsState(if (forgePressed) 0.95f else 1.0f, label = "ForgeScale")
             Box(
-                modifier = Modifier.neumorphic()
+                modifier = Modifier
                     .fillMaxWidth()
                     .height(48.dp)
                     .scale(forgeScale)
@@ -183,24 +182,24 @@ fun PromptsScreen(
             }
         }
 
-        Spacer(modifier = Modifier.neumorphic().height(20.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Prompts Scrolling Display Stream
         LazyColumn(
-            modifier = Modifier.neumorphic().fillMaxWidth().weight(1f),
+            modifier = Modifier.fillMaxWidth().weight(1f),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             items(prompts, key = { it.id }) { prompt ->
                 Box(
-                    modifier = Modifier.neumorphic()
+                    modifier = Modifier
                         .fillMaxWidth()
                         .neumorphicCard()
                         .background(theme.surfaceColor, shape = MaterialTheme.shapes.medium)
                         .padding(16.dp)
                 ) {
-                    Column(modifier = Modifier.neumorphic().fillMaxWidth()) {
+                    Column(modifier = Modifier.fillMaxWidth()) {
                         Row(
-                            modifier = Modifier.neumorphic().fillMaxWidth(),
+                            modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
@@ -226,24 +225,24 @@ fun PromptsScreen(
                             }
                         }
 
-                        Spacer(modifier = Modifier.neumorphic().height(8.dp))
+                        Spacer(modifier = Modifier.height(8.dp))
                         Text(
                             text = prompt.body,
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
 
-                        Spacer(modifier = Modifier.neumorphic().height(14.dp))
+                        Spacer(modifier = Modifier.height(14.dp))
 
                         // Operational Deck Controls Layout Frame
                         Row(
-                            modifier = Modifier.neumorphic().fillMaxWidth(),
+                            modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(12.dp)
                         ) {
                             var copyPressed by remember { mutableStateOf(false) }
                             val copyScale by animateFloatAsState(if (copyPressed) 0.94f else 1.0f, label = "CopyAction")
                             Box(
-                                modifier = Modifier.neumorphic()
+                                modifier = Modifier
                                     .weight(1f)
                                     .height(40.dp)
                                     .scale(copyScale)
@@ -265,7 +264,7 @@ fun PromptsScreen(
                                     horizontalArrangement = Arrangement.spacedBy(6.dp),
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
-                                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy", tint = MaterialTheme.colorScheme.onSurface, modifier = Modifier.neumorphic().size(16.dp))
+                                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy", tint = MaterialTheme.colorScheme.onSurface, modifier = Modifier.size(16.dp))
                                     Text("Copy", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurface)
                                 }
                             }
@@ -273,7 +272,7 @@ fun PromptsScreen(
                             var sendPressed by remember { mutableStateOf(false) }
                             val sendScale by animateFloatAsState(if (sendPressed) 0.94f else 1.0f, label = "SendAction")
                             Box(
-                                modifier = Modifier.neumorphic()
+                                modifier = Modifier
                                     .weight(1f)
                                     .height(40.dp)
                                     .scale(sendScale)
@@ -295,7 +294,7 @@ fun PromptsScreen(
                                     horizontalArrangement = Arrangement.spacedBy(6.dp),
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
-                                    Icon(Icons.Default.Send, contentDescription = "Send AI", tint = MaterialTheme.colorScheme.primary, modifier = Modifier.neumorphic().size(16.dp))
+                                    Icon(Icons.Default.Send, contentDescription = "Send AI", tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(16.dp))
                                     Text("Send to AI", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                                 }
                             }

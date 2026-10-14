@@ -8,6 +8,8 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicTextField
+import com.forgenote.app.ui.theme.neumorphicButton
+import com.forgenote.app.ui.theme.neumorphicSurface
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Save
@@ -25,9 +27,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.forgenote.app.ui.theme.LocalNeumorphicTheme
-import com.forgenote.app.ui.theme.neumorphic
-import com.forgenote.app.ui.theme.neumorphicButton
-import com.forgenote.app.ui.theme.neumorphicSurface
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -58,13 +57,13 @@ fun NoteEditorScreen(
     }
 
     Column(
-        modifier = Modifier.neumorphic()
+        modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
         Row(
-            modifier = Modifier.neumorphic()
+            modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -73,10 +72,10 @@ fun NoteEditorScreen(
             var backPressed by remember { mutableStateOf(false) }
             val backScale by animateFloatAsState(if (backPressed) 0.94f else 1.0f, label = "back")
             Box(
-                modifier = Modifier.neumorphic()
+                modifier = Modifier
                     .size(48.dp)
                     .scale(backScale)
-                    .neumorphicButton(theme, isPressed = backPressed)
+                    .neumorphicButton(isPressed = backPressed)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null
@@ -97,10 +96,10 @@ fun NoteEditorScreen(
                 var htmlPressed by remember { mutableStateOf(false) }
                 val htmlScale by animateFloatAsState(if (htmlPressed) 0.94f else 1.0f, label = "html")
                 Box(
-                    modifier = Modifier.neumorphic()
+                    modifier = Modifier
                         .height(44.dp)
                         .scale(htmlScale)
-                        .neumorphicButton(theme, isPressed = htmlPressed)
+                        .neumorphicButton(isPressed = htmlPressed)
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null
@@ -121,10 +120,10 @@ fun NoteEditorScreen(
                 var mdPressed by remember { mutableStateOf(false) }
                 val mdScale by animateFloatAsState(if (mdPressed) 0.94f else 1.0f, label = "md")
                 Box(
-                    modifier = Modifier.neumorphic()
+                    modifier = Modifier
                         .height(44.dp)
                         .scale(mdScale)
-                        .neumorphicButton(theme, isPressed = mdPressed)
+                        .neumorphicButton(isPressed = mdPressed)
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null
@@ -145,10 +144,10 @@ fun NoteEditorScreen(
                 var savePressed by remember { mutableStateOf(false) }
                 val saveScale by animateFloatAsState(if (savePressed) 0.94f else 1.0f, label = "save")
                 Box(
-                    modifier = Modifier.neumorphic()
+                    modifier = Modifier
                         .size(44.dp)
                         .scale(saveScale)
-                        .neumorphicButton(theme, isPressed = savePressed)
+                        .neumorphicButton(isPressed = savePressed)
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null
@@ -170,10 +169,10 @@ fun NoteEditorScreen(
         }
 
         Box(
-            modifier = Modifier.neumorphic()
+            modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp)
-                .neumorphicSurface(theme, isPressed = true)
+                .neumorphicSurface(isPressed = true)
                 .padding(horizontal = 16.dp, vertical = 12.dp),
             contentAlignment = Alignment.CenterStart
         ) {
@@ -185,17 +184,17 @@ fun NoteEditorScreen(
                 onValueChange = { title = it },
                 textStyle = MaterialTheme.typography.titleLarge.copy(color = MaterialTheme.colorScheme.onBackground),
                 cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
-                modifier = Modifier.neumorphic().fillMaxWidth()
+                modifier = Modifier.fillMaxWidth()
             )
         }
 
-        Spacer(modifier = Modifier.neumorphic().height(20.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Box(
-            modifier = Modifier.neumorphic()
+            modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f)
-                .neumorphicSurface(theme, isPressed = true)
+                .neumorphicSurface(isPressed = true)
                 .background(theme.surfaceColor, shape = MaterialTheme.shapes.medium)
                 .drawBehind {
                     val lineColor = if (isDark) Color(0xFF2E2E3A) else Color(0xFFD0CED4)
@@ -218,7 +217,7 @@ fun NoteEditorScreen(
                     text = "Begin writing your raw thoughts...",
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.neumorphic().padding(top = 4.dp)
+                    modifier = Modifier.padding(top = 4.dp)
                 )
             }
             BasicTextField(
@@ -229,7 +228,7 @@ fun NoteEditorScreen(
                     lineHeight = 36.sp
                 ),
                 cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
-                modifier = Modifier.neumorphic().fillMaxSize()
+                modifier = Modifier.fillMaxSize()
             )
         }
     }
