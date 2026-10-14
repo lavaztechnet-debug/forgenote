@@ -8,3 +8,4 @@
 *.apk
 *.apks
 .DS_Store
+gradle-8.10.2/
