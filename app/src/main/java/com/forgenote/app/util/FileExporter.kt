@@ -7,9 +7,11 @@ import java.io.File
 import java.io.FileOutputStream
 
 object FileExporter {
+    private val INVALID_FILENAME_CHARS_REGEX = Regex("[^a-zA-Z0-9_-]")
+
     fun exportToDownloads(context: Context, title: String, body: String, isHtml: Boolean) {
         val extension = if (isHtml) ".html" else ".md"
-        val cleanTitle = title.replace(Regex("[^a-zA-Z0-9_-]"), "_").ifBlank { "Untitled_Note" }
+        val cleanTitle = title.replace(INVALID_FILENAME_CHARS_REGEX, "_").ifBlank { "Untitled_Note" }
         val filename = "${cleanTitle}_${System.currentTimeMillis()}$extension"
 
         val content = if (isHtml) {
