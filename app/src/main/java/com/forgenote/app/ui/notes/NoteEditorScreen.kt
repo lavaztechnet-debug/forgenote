@@ -76,7 +76,7 @@ fun NoteEditorScreen(
                 modifier = Modifier.neumorphic()
                     .size(48.dp)
                     .scale(backScale)
-                    .neumorphicButton(theme, isPressed = backPressed)
+                    .neumorphicButton(isPressed = backPressed)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null
@@ -100,7 +100,7 @@ fun NoteEditorScreen(
                     modifier = Modifier.neumorphic()
                         .height(44.dp)
                         .scale(htmlScale)
-                        .neumorphicButton(theme, isPressed = htmlPressed)
+                        .neumorphicButton(isPressed = htmlPressed)
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null
@@ -124,7 +124,7 @@ fun NoteEditorScreen(
                     modifier = Modifier.neumorphic()
                         .height(44.dp)
                         .scale(mdScale)
-                        .neumorphicButton(theme, isPressed = mdPressed)
+                        .neumorphicButton(isPressed = mdPressed)
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null
@@ -148,7 +148,7 @@ fun NoteEditorScreen(
                     modifier = Modifier.neumorphic()
                         .size(44.dp)
                         .scale(saveScale)
-                        .neumorphicButton(theme, isPressed = savePressed)
+                        .neumorphicButton(isPressed = savePressed)
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null
@@ -173,7 +173,7 @@ fun NoteEditorScreen(
             modifier = Modifier.neumorphic()
                 .fillMaxWidth()
                 .height(56.dp)
-                .neumorphicSurface(theme, isPressed = true)
+                .neumorphicSurface(isPressed = true)
                 .padding(horizontal = 16.dp, vertical = 12.dp),
             contentAlignment = Alignment.CenterStart
         ) {
@@ -195,7 +195,7 @@ fun NoteEditorScreen(
             modifier = Modifier.neumorphic()
                 .fillMaxWidth()
                 .weight(1f)
-                .neumorphicSurface(theme, isPressed = true)
+                .neumorphicSurface(isPressed = true)
                 .background(theme.surfaceColor, shape = MaterialTheme.shapes.medium)
                 .drawBehind {
                     val lineColor = if (isDark) Color(0xFF2E2E3A) else Color(0xFFD0CED4)

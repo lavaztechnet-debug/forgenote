@@ -13,12 +13,14 @@ object FileExporter {
         val filename = "${cleanTitle}_${System.currentTimeMillis()}$extension"
 
         val content = if (isHtml) {
+            val safeTitle = escapeHtml(title)
+            val safeBody = escapeHtml(body)
             """
             <!DOCTYPE html>
             <html>
             <head>
                 <meta charset="utf-8">
-                <title>$title</title>
+                <title>$safeTitle</title>
                 <style>
                     body { font-family: sans-serif; line-height: 1.6; padding: 20px; color: #2C2C2C; background: #F9F9F9; }
                     h1 { color: #2A7A8C; border-bottom: 2px solid #2A7A8C; padding-bottom: 8px; }
@@ -26,8 +28,8 @@ object FileExporter {
                 </style>
             </head>
             <body>
-                <h1>$title</h1>
-                <div class="content">$body</div>
+                <h1>$safeTitle</h1>
+                <div class="content">$safeBody</div>
             </body>
             </html>
             """.trimIndent()
@@ -49,5 +51,13 @@ object FileExporter {
             e.printStackTrace()
             Toast.makeText(context, "Export Failure: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
         }
+    }
+
+    fun escapeHtml(text: String): String {
+        return text.replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+            .replace("\"", "&quot;")
+            .replace("'", "&#x27;")
     }
 }
