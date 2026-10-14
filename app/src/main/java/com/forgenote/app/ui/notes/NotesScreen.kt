@@ -98,7 +98,7 @@ fun NotesScreen(
                             modifier = Modifier.neumorphic()
                                 .fillMaxWidth()
                                 .scale(cardScale)
-                                .neumorphicCard(theme)
+                                .neumorphicCard()
                                 .background(theme.surfaceColor, shape = MaterialTheme.shapes.medium)
                                 .clickable(
                                     interactionSource = remember { MutableInteractionSource() },
@@ -163,7 +163,7 @@ fun NotesScreen(
                 .padding(bottom = 16.dp, end = 8.dp)
                 .size(64.dp)
                 .scale(animatedFabScale)
-                .neumorphicButton(theme, isPressed = fabPressed)
+                .neumorphicButton(isPressed = fabPressed)
                 .background(
                     brush = Brush.radialGradient(
                         colors = if (isDark) {

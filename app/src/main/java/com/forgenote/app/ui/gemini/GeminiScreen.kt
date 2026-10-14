@@ -88,7 +88,7 @@ fun GeminiScreen(
                             .fillMaxWidth(0.85f)
                             .wrapContentWidth(align = if (isUser) Alignment.End else Alignment.Start)
                             // User messages are raised neumorphic pills; AI are flat inset style
-                            .neumorphicSurface(theme = theme, isPressed = !isUser)
+                            .neumorphicSurface(isPressed = !isUser)
                             .background(theme.surfaceColor, shape = MaterialTheme.shapes.medium)
                             .padding(14.dp)
                     ) {
@@ -132,7 +132,7 @@ fun GeminiScreen(
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxHeight()
-                    .neumorphicSurface(theme, isPressed = true)
+                    .neumorphicSurface(isPressed = true)
                     .padding(horizontal = 16.dp, vertical = 12.dp),
                 contentAlignment = Alignment.CenterStart
             ) {
@@ -159,7 +159,7 @@ fun GeminiScreen(
                 modifier = Modifier
                     .size(54.dp)
                     .scale(sendScale)
-                    .neumorphicButton(theme, isPressed = sendPressed)
+                    .neumorphicButton(isPressed = sendPressed)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null

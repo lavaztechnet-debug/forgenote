@@ -28,6 +28,13 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            val localProperties = Properties()
+            val localPropertiesFile = rootProject.file("local.properties")
+            if (localPropertiesFile.exists()) {
+                localPropertiesFile.inputStream().use { localProperties.load(it) }
+            }
+            val apiKey = localProperties.getProperty("GEMINI_API_KEY") ?: "PASTE_YOUR_KEY_HERE"
+            buildConfigField("String", "GEMINI_API_KEY", "\"$apiKey\"")
         }
         debug {
             val localProperties = Properties()
