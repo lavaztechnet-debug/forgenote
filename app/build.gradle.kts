@@ -77,4 +77,7 @@ dependencies {
 
     // Google Generative AI SDK (Gemini Flash Support)
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+
+    // Testing
+    testImplementation("junit:junit:4.13.2")
 }
